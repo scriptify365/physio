@@ -468,8 +468,8 @@ watch(selectedPatientId, () => { selectedSessionId.value = '' })
       <div class="brand-logo">p<span>.</span></div>
       <div class="eyebrow">PHYSIOPLAN</div>
       <h1>Twoja aplikacja<br>jest gotowa do podłączenia.</h1>
-      <p>Skonfiguruj bezpłatny projekt Supabase i dwie zmienne środowiskowe. Instrukcja znajduje się w pliku <code>README.md</code>.</p>
-      <div class="setup-steps"><span>1. Supabase</span><span>2. GitHub</span><span>3. Cloudflare Pages</span></div>
+      <p>Dodaj zmienne kompilacji <code>VITE_SUPABASE_URL</code> i <code>VITE_SUPABASE_PUBLISHABLE_KEY</code> w ustawieniach Cloudflare, a następnie ponów wdrożenie.</p>
+      <div class="setup-steps"><span>1. Supabase</span><span>2. Zmienne Cloudflare</span><span>3. Ponowny deploy</span></div>
     </div>
 
     <div v-else-if="!user" class="auth-layout">
