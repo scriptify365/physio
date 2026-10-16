@@ -198,13 +198,14 @@ async function logIn() {
         if (userError && userError.name !== 'AuthSessionMissingError') throw userError
         if (userData.user) {
           await ensureOwnerMembership()
-          authNotice.value = 'Konto właściciela utworzone. Teraz możesz korzystać z aplikacji.'
+          authNotice.value = 'Konto właściciela utworzone. Możesz się teraz zalogować.'
         } else {
-          authNotice.value = 'Konto utworzone. Potwierdź e-mail, zaloguj się, a konto właściciela zostanie przypisane automatycznie.'
+          authNotice.value = 'Konto utworzone. Możesz się teraz zalogować.'
         }
       } else {
-        authNotice.value = 'Sprawdź pocztę i potwierdź adres e-mail, następnie zaloguj się.'
+        authNotice.value = 'Konto utworzone. Możesz się teraz zalogować.'
       }
+      authMode.value = 'login'
     } else {
       const { data, error } = await supabase.auth.signInWithPassword({ email: authEmail.value.trim(), password: authPassword.value })
       if (error) throw error
